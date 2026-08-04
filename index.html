@@ -31,9 +31,24 @@
         <div id="artistName" class="artist">Start Spotify on another device</div>
         <div class="progress-row">
           <span id="elapsed">0:00</span>
-          <div class="progress"><div id="progressFill"></div></div>
+          <input id="seekSlider" class="seek" type="range" min="0" max="1000" value="0" aria-label="Track position">
           <span id="duration">0:00</span>
         </div>
+      </div>
+      <div id="controls" class="controls">
+        <div class="main-controls">
+          <button id="shuffleButton" class="control small-control" aria-label="Shuffle">⇄</button>
+          <button id="previousButton" class="control" aria-label="Previous">◀◀</button>
+          <button id="playPauseButton" class="control play-control" aria-label="Play or pause">▶</button>
+          <button id="nextButton" class="control" aria-label="Next">▶▶</button>
+          <button id="repeatButton" class="control small-control" aria-label="Repeat">↻</button>
+        </div>
+        <div class="secondary-controls">
+          <button id="saveButton" class="save-control">♡ Save</button>
+          <span>🔈</span><input id="volumeSlider" type="range" min="0" max="100" value="50" aria-label="Volume"><span>🔊</span>
+        </div>
+        <div id="deviceName" class="device-name"></div>
+        <div id="statusMessage" class="status-message"></div>
       </div>
       <button id="logoutButton" class="logout" aria-label="Disconnect Spotify">Disconnect</button>
     </section>

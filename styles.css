@@ -30,3 +30,20 @@ button { border: 0; border-radius: 999px; padding: 16px 24px; font-size: 18px; f
   .artist { font-size: clamp(20px, 4.5vw, 32px); }
   .progress-row { margin-top: 26px; }
 }
+
+.controls { margin-top:24px; padding:18px; border-radius:24px; background:rgba(0,0,0,.38); backdrop-filter:blur(20px); opacity:0; transform:translateY(12px); pointer-events:none; transition:.25s; }
+.player.controls-visible .controls { opacity:1; transform:none; pointer-events:auto; }
+.main-controls { display:flex; align-items:center; justify-content:center; gap:14px; }
+.control { width:58px; height:58px; padding:0; display:grid; place-items:center; background:rgba(255,255,255,.14); }
+.play-control { width:76px; height:76px; background:#fff; color:#000; font-size:26px; }
+.small-control { width:48px; height:48px; opacity:.72; }
+.control.active,.save-control.active { background:#1ed760; color:#000; opacity:1; }
+.secondary-controls { margin-top:16px; display:grid; grid-template-columns:auto auto 1fr auto; gap:10px; align-items:center; }
+.save-control { padding:10px 16px; background:rgba(255,255,255,.14); font-size:14px; }
+.seek, #volumeSlider { width:100%; accent-color:#fff; }
+.device-name,.status-message { margin-top:10px; text-align:center; font-size:12px; opacity:.68; min-height:15px; }
+.player.controls-visible .logout { opacity:1; pointer-events:auto; }
+.logout { opacity:0; pointer-events:none; transition:.2s; }
+#albumArt { animation:breathe 18s ease-in-out infinite alternate; }
+@keyframes breathe { from{transform:scale(1)} to{transform:scale(1.012)} }
+@media (orientation:portrait),(max-width:780px){ .secondary-controls{grid-template-columns:auto auto 1fr auto}.controls{margin-top:12px;padding:14px}.control{width:50px;height:50px}.play-control{width:66px;height:66px}.small-control{width:42px;height:42px} }

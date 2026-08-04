@@ -1,30 +1,12 @@
-# Spotify Now Playing for iPad
+# Spotify Now Playing Remote v2
 
-A static Spotify album-art dashboard designed for an iPad on a stereo stand.
+Adds tap-to-reveal Spotify Connect controls: play/pause, previous/next, shuffle, repeat, seek, volume, and save to Liked Songs.
 
-## Files
+## Upgrade
+1. Keep your existing Spotify Client ID.
+2. Upload these files over the existing GitHub repository files.
+3. Put your Client ID back into `config.js`.
+4. Commit changes.
+5. Open the dashboard, tap Disconnect, then Connect Spotify again to approve the added permissions.
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `config.js`
-- `manifest.webmanifest`
-
-## Setup summary
-
-1. Create a public GitHub repository.
-2. Upload these files.
-3. Enable GitHub Pages from the `main` branch and repository root.
-4. Your URL will usually be:
-   `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/`
-5. In the Spotify Developer Dashboard, create an app with Web API access.
-6. Add the exact GitHub Pages URL as the Redirect URI, including the trailing slash.
-7. Copy the Spotify Client ID into `config.js`.
-8. Commit the changed `config.js`.
-9. Open the Pages URL and tap **Connect Spotify**.
-
-## Important
-
-- Spotify currently requires the app owner to have Spotify Premium for Development Mode Web API apps.
-- Do not put a Spotify Client Secret in this project. This app uses Authorization Code with PKCE specifically so a secret is not stored in the browser.
-- The site reads metadata. Spotify audio continues playing through your chosen Spotify Connect device.
+Controls operate the currently active Spotify Connect device. Spotify Premium is required. Some hardware devices may not expose volume control through Spotify.
