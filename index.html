@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Now Playing" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Now Playing</title>
+</head>
+<body>
+  <div id="background"></div>
+
+  <main class="shell">
+    <section id="loginPanel" class="panel">
+      <h1>Now Playing</h1>
+      <p>Connect Spotify to turn this iPad into an album-art display.</p>
+      <button id="loginButton">Connect Spotify</button>
+      <p class="small">This page reads playback metadata only. Audio keeps playing on your normal Spotify device.</p>
+    </section>
+
+    <section id="playerPanel" class="player hidden" aria-live="polite">
+      <div class="art-wrap">
+        <img id="albumArt" alt="Album artwork" />
+      </div>
+      <div class="meta">
+        <div id="trackName" class="track">Nothing playing</div>
+        <div id="artistName" class="artist">Start Spotify on another device</div>
+        <div class="progress-row">
+          <span id="elapsed">0:00</span>
+          <div class="progress"><div id="progressFill"></div></div>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      <button id="logoutButton" class="logout" aria-label="Disconnect Spotify">Disconnect</button>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

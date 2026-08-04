@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body { min-height: 100dvh; }
+#background { position: fixed; inset: -40px; background: radial-gradient(circle at center, #313131, #050505 70%); background-position: center; background-size: cover; filter: blur(34px) brightness(.45) saturate(1.25); transform: scale(1.08); transition: background-image .8s ease; }
+#background::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.18); }
+.shell { position: relative; z-index: 1; width: 100%; height: 100%; padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); display: grid; place-items: center; }
+.panel { width: min(520px, 92vw); text-align: center; padding: 44px; border-radius: 28px; background: rgba(0,0,0,.58); backdrop-filter: blur(24px); box-shadow: 0 24px 80px rgba(0,0,0,.45); }
+.panel h1 { font-size: clamp(42px, 7vw, 72px); margin: 0 0 16px; letter-spacing: -.04em; }
+.panel p { font-size: 19px; line-height: 1.45; opacity: .86; }
+button { border: 0; border-radius: 999px; padding: 16px 24px; font-size: 18px; font-weight: 700; cursor: pointer; }
+#loginButton { background: #1ed760; color: #000; margin-top: 10px; }
+.small { font-size: 14px !important; opacity: .62 !important; }
+.player { width: min(1180px, 100%); height: 100%; display: grid; grid-template-columns: minmax(320px, 1fr) minmax(300px, .8fr); gap: clamp(28px, 5vw, 76px); align-items: center; }
+.art-wrap { width: 100%; aspect-ratio: 1; max-height: calc(100dvh - 64px); justify-self: center; }
+#albumArt { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 24px; box-shadow: 0 30px 90px rgba(0,0,0,.55); }
+.meta { align-self: center; text-shadow: 0 3px 20px rgba(0,0,0,.45); }
+.track { font-size: clamp(38px, 5.5vw, 82px); font-weight: 800; line-height: .98; letter-spacing: -.045em; }
+.artist { margin-top: 20px; font-size: clamp(22px, 2.8vw, 38px); font-weight: 500; opacity: .78; }
+.progress-row { margin-top: 42px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; font-variant-numeric: tabular-nums; opacity: .86; }
+.progress { height: 6px; border-radius: 99px; background: rgba(255,255,255,.24); overflow: hidden; }
+#progressFill { width: 0%; height: 100%; background: #fff; border-radius: inherit; transition: width .5s linear; }
+.logout { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); background: rgba(0,0,0,.38); color: rgba(255,255,255,.72); font-size: 13px; padding: 10px 14px; backdrop-filter: blur(12px); }
+.hidden { display: none !important; }
+
+@media (orientation: portrait), (max-width: 780px) {
+  .player { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; gap: 24px; align-content: center; }
+  .art-wrap { width: min(76vw, 62vh); }
+  .meta { width: min(86vw, 700px); text-align: center; justify-self: center; }
+  .track { font-size: clamp(34px, 8vw, 64px); }
+  .artist { font-size: clamp(20px, 4.5vw, 32px); }
+  .progress-row { margin-top: 26px; }
+}
